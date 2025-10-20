@@ -43,7 +43,7 @@ public class TopDownMovement : MonoBehaviour
 
         if (Keyboard.current != null)
         {
-            Debug.Log(Keyboard.current.wKey.isPressed);
+           
             if (Keyboard.current.wKey.isPressed || Keyboard.current.upArrowKey.isPressed) moveInput.y += 1f;
             if (Keyboard.current.sKey.isPressed || Keyboard.current.downArrowKey.isPressed) moveInput.y -= 1f;
             if (Keyboard.current.aKey.isPressed || Keyboard.current.leftArrowKey.isPressed) moveInput.x -= 1f;
