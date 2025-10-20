@@ -5,13 +5,15 @@ using UnityEngine.InputSystem;
 public class TopDownMovement : MonoBehaviour
 {
     public float moveSpeed = 5f;
-    public BoxCollider2D gameBoundary; // Assign your boundary here in Inspector
+    public BoxCollider2D gameBoundary; 
 
     private Rigidbody2D rb;
     private Vector2 moveInput;
     private Vector2 minBounds;
     private Vector2 maxBounds;
     private Vector2 playerSize;
+
+    public Animator anim;
 
     void Start()
     {
@@ -43,7 +45,7 @@ public class TopDownMovement : MonoBehaviour
 
         if (Keyboard.current != null)
         {
-           
+
             if (Keyboard.current.wKey.isPressed || Keyboard.current.upArrowKey.isPressed) moveInput.y += 1f;
             if (Keyboard.current.sKey.isPressed || Keyboard.current.downArrowKey.isPressed) moveInput.y -= 1f;
             if (Keyboard.current.aKey.isPressed || Keyboard.current.leftArrowKey.isPressed) moveInput.x -= 1f;
@@ -51,6 +53,28 @@ public class TopDownMovement : MonoBehaviour
 
             moveInput = moveInput.normalized;
         }
+
+        if (moveInput.x > 0)
+        {
+            anim.Play("Walk Right");
+        }
+        else if (moveInput.x < 0)
+        {
+            anim.Play("Walk Left");
+        }
+        else if (moveInput.y > 0)
+        {
+            anim.Play("Walk Up");
+        }
+        else if (moveInput.y < 0)
+        {
+            anim.Play("Walk Down");
+        }
+        else
+        {
+            anim.Play("Idle");
+        }
+
     }
 
     void FixedUpdate()
