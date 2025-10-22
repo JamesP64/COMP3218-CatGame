@@ -45,7 +45,6 @@ public class TopDownMovement : MonoBehaviour
 
         if (Keyboard.current != null)
         {
-
             if (Keyboard.current.wKey.isPressed || Keyboard.current.upArrowKey.isPressed) moveInput.y += 1f;
             if (Keyboard.current.sKey.isPressed || Keyboard.current.downArrowKey.isPressed) moveInput.y -= 1f;
             if (Keyboard.current.aKey.isPressed || Keyboard.current.leftArrowKey.isPressed) moveInput.x -= 1f;
@@ -54,28 +53,12 @@ public class TopDownMovement : MonoBehaviour
             moveInput = moveInput.normalized;
         }
 
-        if (moveInput.x > 0)
-        {
-            anim.Play("Walk Right");
-        }
-        else if (moveInput.x < 0)
-        {
-            anim.Play("Walk Left");
-        }
-        else if (moveInput.y > 0)
-        {
-            anim.Play("Walk Up");
-        }
-        else if (moveInput.y < 0)
-        {
-            anim.Play("Walk Down");
-        }
-        else
-        {
-            anim.Play("Idle");
-        }
-
+        // Pass values to Animator
+        anim.SetFloat("MoveX", moveInput.x);
+        anim.SetFloat("MoveY", moveInput.y);
+        anim.SetBool("IsMoving", moveInput.magnitude > 0);
     }
+
 
     void FixedUpdate()
     {
