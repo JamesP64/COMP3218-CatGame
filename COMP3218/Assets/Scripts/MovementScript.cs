@@ -15,6 +15,12 @@ public class TopDownMovement : MonoBehaviour
 
     public Animator anim;
 
+    private Vector2 lastMoveDir = Vector2.down;
+
+    private float idleDelay = 0.1f;
+    private float idleTimer = 0f;
+
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -43,6 +49,7 @@ public class TopDownMovement : MonoBehaviour
     {
         moveInput = Vector2.zero;
 
+        // Movement from the keyboard
         if (Keyboard.current != null)
         {
             if (Keyboard.current.wKey.isPressed || Keyboard.current.upArrowKey.isPressed) moveInput.y += 1f;
@@ -53,10 +60,20 @@ public class TopDownMovement : MonoBehaviour
             moveInput = moveInput.normalized;
         }
 
-        // Pass values to Animator
-        anim.SetFloat("MoveX", moveInput.x);
-        anim.SetFloat("MoveY", moveInput.y);
-        anim.SetBool("IsMoving", moveInput.magnitude > 0);
+        // Remembering where you have been moving
+        if (moveInput != Vector2.zero)
+        {
+            lastMoveDir = moveInput;
+            idleTimer = 0f;
+        } else
+        {
+            idleTimer += Time.deltaTime;
+        }
+
+        // For my animations
+        anim.SetFloat("MoveX", lastMoveDir.x);
+        anim.SetFloat("MoveY", lastMoveDir.y);
+        anim.SetBool("IsMoving", idleTimer < idleDelay);
     }
 
 
