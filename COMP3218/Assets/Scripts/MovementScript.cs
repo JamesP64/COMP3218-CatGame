@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 public class TopDownMovement : MonoBehaviour
 {
     public float moveSpeed = 5f;
-    public BoxCollider2D gameBoundary; 
+    public EdgeCollider2D gameBoundary; 
 
     private Rigidbody2D rb;
     private Vector2 moveInput;
@@ -41,7 +41,7 @@ public class TopDownMovement : MonoBehaviour
             }
         }
 
-        rb.gravityScale = 0; 
+        rb.gravityScale = 0;
         rb.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
     }
 
@@ -80,10 +80,6 @@ public class TopDownMovement : MonoBehaviour
     void FixedUpdate()
     {
         Vector2 newPos = rb.position + moveInput * moveSpeed * Time.fixedDeltaTime;
-
-        newPos.x = Mathf.Clamp(newPos.x, minBounds.x + playerSize.x, maxBounds.x - playerSize.x);
-        newPos.y = Mathf.Clamp(newPos.y, minBounds.y + playerSize.y, maxBounds.y - playerSize.y);
-
         rb.MovePosition(newPos);
     }
 }
