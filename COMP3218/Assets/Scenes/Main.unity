@@ -260,7 +260,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 3
-      m_TileSpriteIndex: 3
+      m_TileSpriteIndex: 10
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -447,8 +447,8 @@ Tilemap:
     m_Data: {fileID: -4386508856452034376, guid: 5379eeef59d3913429a2d876dd198564, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: -1309000912, guid: 5379eeef59d3913429a2d876dd198564, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: 92151329, guid: 5379eeef59d3913429a2d876dd198564, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: -1347416452, guid: 5379eeef59d3913429a2d876dd198564, type: 3}
   - m_RefCount: 1
@@ -461,8 +461,8 @@ Tilemap:
     m_Data: {fileID: 913657261, guid: 5379eeef59d3913429a2d876dd198564, type: 3}
   - m_RefCount: 4
     m_Data: {fileID: -282777802, guid: 5379eeef59d3913429a2d876dd198564, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 92151329, guid: 5379eeef59d3913429a2d876dd198564, type: 3}
   m_TileMatrixArray:
   - m_RefCount: 20
     m_Data:
@@ -1084,6 +1084,7 @@ GameObject:
   - component: {fileID: 556923470}
   - component: {fileID: 556923469}
   - component: {fileID: 556923473}
+  - component: {fileID: 556923474}
   m_Layer: 0
   m_Name: Cat
   m_TagString: Untagged
@@ -1230,6 +1231,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &556923474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 556923468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aef0ff2509613c2448edea9a52510305, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MeowDialogue
+  speechBubble: {fileID: 4187672186330666178, guid: a1aa524d029615545ab874771f3465f0, type: 3}
+  displayDuration: 2
 --- !u!1 &699265108
 GameObject:
   m_ObjectHideFlags: 0
