@@ -176,7 +176,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Uh oh!
+  m_text: 'Uh oh, you stepped into the darkness!
 
     You lose!
 
