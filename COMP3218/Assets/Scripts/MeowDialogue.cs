@@ -9,13 +9,16 @@ public class MeowDialogue : MonoBehaviour
     public float displayDuration = 2f;
     public float activationRadius = 5f;
     public LayerMask lightGroupLayer;
+    public GameObject gameLogic;
 
     private GameObject activeBubble;
     private AudioSource audioData;
+    private GameLogic logic;
 
     void Start()
     {
         audioData = GetComponent<AudioSource>();
+        logic = gameLogic.GetComponent<GameLogic>();
     }
 
     void Update()
@@ -95,5 +98,7 @@ public class MeowDialogue : MonoBehaviour
             data.light.intensity = data.light.lightType == Light2D.LightType.Parametric ? 3f : 1f;
             data.light.shapeLightFalloffSize = data.targetFalloff;
         }
+
+        logic.setWin(true);
     }
 }
