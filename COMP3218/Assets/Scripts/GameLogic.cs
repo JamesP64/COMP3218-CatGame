@@ -3,8 +3,9 @@ using UnityEngine;
 
 public class GameLogic : MonoBehaviour
 {
-    // This keeps track of the current state of the game, win or lose
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    // This ONLY keeps track of the current state of the game, win or lose
+    // The actual win logic is attached to the exit
+    // The actual lost logic is attached to the cat
     Boolean win;
     void Start()
     {
