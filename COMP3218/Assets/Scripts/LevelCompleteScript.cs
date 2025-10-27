@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelCompleteScript : MonoBehaviour
 {
@@ -17,7 +18,7 @@ public class LevelCompleteScript : MonoBehaviour
     {
         if (collision.CompareTag("Player") && logic.getWin()==true)
         {
-            Debug.Log("Win!");
+            SceneManager.LoadScene("WinScene", LoadSceneMode.Single);
         }
     }
 }
