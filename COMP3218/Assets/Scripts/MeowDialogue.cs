@@ -15,6 +15,8 @@ public class MeowDialogue : MonoBehaviour
     private AudioSource audioData;
     private GameLogic logic;
 
+    public GameObject safeZone;
+
     void Start()
     {
         audioData = GetComponent<AudioSource>();
@@ -48,6 +50,7 @@ public class MeowDialogue : MonoBehaviour
             var eyes = group.transform.Find("Eyes");
             if (eyes != null && !eyes.gameObject.activeSelf)
             {
+                safeZone.gameObject.SetActive(true);
                 eyes.gameObject.SetActive(true);
                 StartCoroutine(FadeInLights(eyes.gameObject));
             }
