@@ -18,7 +18,9 @@ public class LevelCompleteScript : MonoBehaviour
     {
         if (collision.CompareTag("Player") && logic.getWin()==true)
         {
+            Debug.Log("Won");
             SceneManager.LoadScene("WinScene", LoadSceneMode.Single);
         }
+        Debug.Log(collision);
     }
 }
