@@ -103,6 +103,7 @@ public class MeowDialogue : MonoBehaviour
         }
 
         logic.setWin(true);
+        Debug.Log(logic.getWin());
         Debug.Log("Set win to true");
     }
 }
