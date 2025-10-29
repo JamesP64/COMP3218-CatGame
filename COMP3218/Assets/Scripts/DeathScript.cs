@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 public class DeathScript : MonoBehaviour
 {
 
@@ -23,10 +25,15 @@ public class DeathScript : MonoBehaviour
         if (safeZoneCount <= 0)
         {
             Debug.Log("Die");
-            transform.position = Vector3.zero;
-            var rb = GetComponent<Rigidbody2D>();
-            if (rb != null)
-                rb.linearVelocity = Vector2.zero;
+
+            SceneManager.LoadScene("LoseScene", LoadSceneMode.Single);
+
+            
+            //transform.position = Vector3.zero;
+            //var rb = GetComponent<Rigidbody2D>();
+            //if (rb != null)
+            //    rb.linearVelocity = Vector2.zero;
+            
         }
     }
 
