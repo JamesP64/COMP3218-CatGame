@@ -15,7 +15,7 @@ public class BackToStart : MonoBehaviour
     {
         if (Keyboard.current.spaceKey.wasPressedThisFrame)
         {
-            SceneManager.LoadScene("Main", LoadSceneMode.Single);
+            SceneManager.LoadScene("Level1", LoadSceneMode.Single);
         }
     }
 }
