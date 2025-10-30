@@ -12,20 +12,26 @@ EditorBuildSettings:
     path: Assets/Scenes/KatieScene.unity
     guid: 1788a9486ebd1484bb7a223c1677f3a4
   - enabled: 1
-    path: Assets/Scenes/WinScene.unity
-    guid: 80e32af6466b3d24680804b155266389
-  - enabled: 0
-    path: Assets/Scenes/JamesScene.unity
-    guid: eda7e35ed4629f346ae5dd7990dec657
-  - enabled: 1
-    path: Assets/Scenes/LoseScene.unity
-    guid: f4cace35d1857244d83d874356a3c5f3
+    path: Assets/Scenes/Menu.unity
+    guid: 231090b61ab42554e8e778346979d9bc
   - enabled: 1
     path: Assets/Scenes/Level1.unity
     guid: 4e6e23464ee64f64cb4dc49ec8198966
   - enabled: 1
-    path: Assets/Scenes/Menu.unity
-    guid: 231090b61ab42554e8e778346979d9bc
+    path: Assets/Scenes/WinScene.unity
+    guid: 80e32af6466b3d24680804b155266389
+  - enabled: 1
+    path: Assets/Scenes/LoseScene.unity
+    guid: f4cace35d1857244d83d874356a3c5f3
+  - enabled: 0
+    path: Assets/Scenes/JamesScene.unity
+    guid: eda7e35ed4629f346ae5dd7990dec657
+  - enabled: 1
+    path: Assets/Scenes/Options.unity
+    guid: 6e943479012949b42b687a24a5104ee1
+  - enabled: 1
+    path: Assets/Scenes/Help.unity
+    guid: 0616bcfc4b5f1444fb1629bd99758538
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
