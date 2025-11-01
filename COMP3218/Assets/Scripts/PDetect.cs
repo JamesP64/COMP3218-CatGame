@@ -7,6 +7,13 @@ public class PDetect : MonoBehaviour
     public GameObject statue1;
     public GameObject statue2;
 
+    public static bool LookingRight = true;
+
+    public Level2MeowDialogue dialogue;
+
+    public static bool leftStatueOn;
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -27,14 +34,27 @@ public class PDetect : MonoBehaviour
             {
                 statue1.SetActive(false);
                 statue2.SetActive(true);
+                LookingRight = false;
             }
             else
             {
                 statue2.SetActive(false);
                 statue1.SetActive(true);
+                LookingRight = true;
             }
+
+            if (leftStatueOn)
+            {
+                dialogue.HandleStatueControlledLights();
+            }
+            
         }
 
         Debug.Log(collision);
+    }
+
+    public static void statueOn()
+    {
+        leftStatueOn = true;    
     }
 }
