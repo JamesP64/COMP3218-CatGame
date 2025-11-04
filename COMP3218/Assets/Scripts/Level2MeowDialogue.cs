@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections;
 using UnityEngine.Rendering.Universal;
+using System;
 
 public class Level2MeowDialogue : MonoBehaviour
 {
@@ -25,12 +26,17 @@ public class Level2MeowDialogue : MonoBehaviour
     public GameObject eyeLightsLeftPosition2;
     public GameObject eyeLightsTop;
 
+    private Boolean eyeLightsLeftOn;
+    private Boolean eyeLightsTopOn;
+
     
 
     void Start()
     {
         audioData = GetComponent<AudioSource>();
         logic = gameLogic.GetComponent<GameLogic>();
+        eyeLightsLeftOn = false;
+        eyeLightsTopOn = false;
     }
 
     void Update()
@@ -70,6 +76,9 @@ public class Level2MeowDialogue : MonoBehaviour
                 safeZone1.SetActive(true);
                 eyes.gameObject.SetActive(true);
                 StartCoroutine(FadeInLights(eyes.gameObject));
+                eyeLightsLeftOn = true;
+                UpdateWin();
+                Debug.Log("Win condition: " + logic.getWin());
             }
 
             else if (group.name.Contains("EyeLightsLeft"))
@@ -99,6 +108,10 @@ public class Level2MeowDialogue : MonoBehaviour
                 downEyes.SetActive(false);
                 rightEyes.SetActive(true);
                 StartCoroutine(FadeInLights(rightEyes));
+                eyeLightsLeftOn = true;
+                UpdateWin();
+                Debug.Log("Win condition: " + logic.getWin());
+
             }
         }
         else
@@ -111,8 +124,15 @@ public class Level2MeowDialogue : MonoBehaviour
                 rightEyes.SetActive(false);
                 downEyes.SetActive(true);
                 StartCoroutine(FadeInLights(downEyes));
+                eyeLightsLeftOn = false;
+                UpdateWin();
+                Debug.Log("Win condition: " + logic.getWin());
+
             }
         }
+
+        
+
     }
 
 
@@ -164,5 +184,13 @@ public class Level2MeowDialogue : MonoBehaviour
         logic.setWin(true);
         Debug.Log(logic.getWin());
         Debug.Log("Set win to true");
+    }
+
+    void UpdateWin()
+    {
+        if(eyeLightsTopOn && eyeLightsLeftOn)
+        {
+            logic.setWin(true);
+        }
     }
 }

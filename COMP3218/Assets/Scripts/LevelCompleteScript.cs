@@ -22,8 +22,11 @@ public class LevelCompleteScript : MonoBehaviour
         {
             Debug.Log("Won");
             SceneManager.LoadScene("WinScene", LoadSceneMode.Single);
+        } else
+        {
+            Debug.Log(collision.tag);
+            Debug.Log(logic.getWin());
         }
-     
         Debug.Log(collision);
     }
 }
