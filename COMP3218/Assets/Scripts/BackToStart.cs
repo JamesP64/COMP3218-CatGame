@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class BackToStart : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public string scene;
     void Start()
     {
         
@@ -15,7 +16,7 @@ public class BackToStart : MonoBehaviour
     {
         if (Keyboard.current.spaceKey.wasPressedThisFrame)
         {
-            SceneManager.LoadScene("Level1", LoadSceneMode.Single);
+            SceneManager.LoadScene(scene, LoadSceneMode.Single);
         }
     }
 }

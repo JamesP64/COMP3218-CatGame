@@ -286,7 +286,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4ad8681afbe1f6438ec1d9511637306, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BackToStart
-  scene: Level1
+  scene: Level2
 --- !u!4 &349741729
 Transform:
   m_ObjectHideFlags: 0

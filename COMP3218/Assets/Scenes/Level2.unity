@@ -10225,6 +10225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fbfa9a7190c3a04cb798351fe4495dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  loseScene: LoseSceneLevel2
 --- !u!82 &1866838068
 AudioSource:
   m_ObjectHideFlags: 0

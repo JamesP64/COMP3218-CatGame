@@ -5,6 +5,7 @@ public class DeathScript : MonoBehaviour
 {
 
     private int safeZoneCount = 0;
+    public string loseScene;
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -26,7 +27,7 @@ public class DeathScript : MonoBehaviour
         {
             Debug.Log("Die");
 
-            SceneManager.LoadScene("LoseScene", LoadSceneMode.Single);
+            SceneManager.LoadScene(loseScene, LoadSceneMode.Single);
 
             
             //transform.position = Vector3.zero;
