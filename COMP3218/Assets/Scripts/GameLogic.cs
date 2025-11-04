@@ -9,11 +9,12 @@ public class GameLogic : MonoBehaviour
     Boolean win;
     void Start()
     {
+        Debug.Log("Win condition: " + win);
         win = false;
     }
-
     public void setWin(Boolean win)
     {
+        Debug.Log("Win condition set to: " + win);
         this.win = win;
     }
 

@@ -76,7 +76,7 @@ public class Level2MeowDialogue : MonoBehaviour
                 safeZone1.SetActive(true);
                 eyes.gameObject.SetActive(true);
                 StartCoroutine(FadeInLights(eyes.gameObject));
-                eyeLightsLeftOn = true;
+                eyeLightsTopOn = true;
                 UpdateWin();
                 Debug.Log("Win condition: " + logic.getWin());
             }
@@ -108,7 +108,7 @@ public class Level2MeowDialogue : MonoBehaviour
                 downEyes.SetActive(false);
                 rightEyes.SetActive(true);
                 StartCoroutine(FadeInLights(rightEyes));
-                eyeLightsLeftOn = true;
+                eyeLightsLeftOn = false;
                 UpdateWin();
                 Debug.Log("Win condition: " + logic.getWin());
 
@@ -124,13 +124,12 @@ public class Level2MeowDialogue : MonoBehaviour
                 rightEyes.SetActive(false);
                 downEyes.SetActive(true);
                 StartCoroutine(FadeInLights(downEyes));
-                eyeLightsLeftOn = false;
+                eyeLightsLeftOn = true;
                 UpdateWin();
                 Debug.Log("Win condition: " + logic.getWin());
 
             }
         }
-
         
 
     }
@@ -180,14 +179,11 @@ public class Level2MeowDialogue : MonoBehaviour
             data.light.intensity = data.light.lightType == Light2D.LightType.Parametric ? 3f : 1f;
             data.light.shapeLightFalloffSize = data.targetFalloff;
         }
-
-        logic.setWin(true);
-        Debug.Log(logic.getWin());
-        Debug.Log("Set win to true");
     }
 
     void UpdateWin()
     {
+        Debug.Log("Updating win condition, top lights: " + eyeLightsTopOn + ", left lights: " + eyeLightsLeftOn);
         if(eyeLightsTopOn && eyeLightsLeftOn)
         {
             logic.setWin(true);
