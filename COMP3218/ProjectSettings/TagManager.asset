@@ -48,5 +48,8 @@ TagManager:
   - name: foreground
     uniqueID: 1709972689
     locked: 0
+  - name: BoxLights
+    uniqueID: 3309825669
+    locked: 0
   m_RenderingLayers:
   - Default
