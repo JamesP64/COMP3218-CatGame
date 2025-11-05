@@ -49,8 +49,6 @@ public class PDetect : MonoBehaviour
             }
             
         }
-
-        Debug.Log(collision);
     }
 
     public static void statueOn()
