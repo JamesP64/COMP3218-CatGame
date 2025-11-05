@@ -26,6 +26,8 @@ public class Level2MeowDialogue : MonoBehaviour
     public GameObject eyeLightsLeftPosition2;
     public GameObject eyeLightsTop;
 
+    public GameObject PinkMaker;
+
     private Boolean eyeLightsLeftOn;
     private Boolean eyeLightsTopOn;
 
@@ -46,6 +48,10 @@ public class Level2MeowDialogue : MonoBehaviour
             ShowSpeechBubble();
             audioData.Play(0);
             ActivateNearbyLights();
+        }
+        if (eyeLightsLeftOn && eyeLightsTopOn)
+        {
+            PinkMaker.SetActive(true);
         }
     }
 
