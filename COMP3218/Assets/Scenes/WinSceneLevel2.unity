@@ -434,7 +434,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80bbe5ced21110341bd4f4614c6bd6a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ChangeSceneButton
-  SceneName: Level2
+  SceneName: Level3
   button: {fileID: 0}
 --- !u!1 &1372265545
 GameObject:
@@ -768,7 +768,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Congratulations!
 
-    You completed level 1!'
+    You completed level 2!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3aa937542f5fd814a9a5e59da9136fc4, type: 2}
   m_sharedMaterial: {fileID: -1273987016772630887, guid: 3aa937542f5fd814a9a5e59da9136fc4, type: 2}

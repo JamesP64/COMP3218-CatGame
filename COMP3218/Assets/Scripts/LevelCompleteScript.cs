@@ -9,6 +9,7 @@ public class LevelCompleteScript : MonoBehaviour
     public GameObject exit;
     public GameObject cat;
     public GameObject gameLogic;
+    public string winScene;
     private GameLogic logic;
 
     private void Start()
@@ -21,7 +22,7 @@ public class LevelCompleteScript : MonoBehaviour
         if (collision.CompareTag("Player") && logic.getWin()==true)
         {
             Debug.Log("Won");
-            SceneManager.LoadScene("WinScene", LoadSceneMode.Single);
+            SceneManager.LoadScene(winScene, LoadSceneMode.Single);
         } else
         {
             Debug.Log(collision.tag);

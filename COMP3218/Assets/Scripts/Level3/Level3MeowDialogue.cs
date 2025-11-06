@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections;
 using UnityEngine.Rendering.Universal;
+using System;
 
 public class Level3MeowDialogue : MonoBehaviour
 {
@@ -28,10 +29,17 @@ public class Level3MeowDialogue : MonoBehaviour
     public GameObject boxPos1;
     public GameObject boxPos2;
 
+    private Boolean lightsTopOn;
+    private Boolean lightsLeftOn;
+    private Boolean boxIsPos2;
+
     void Start()
     {
         audioData = GetComponent<AudioSource>();
         logic = gameLogic.GetComponent<GameLogic>();
+        lightsTopOn = false;
+        lightsLeftOn = false;
+        boxIsPos2 = false;
     }
 
     void Update()
@@ -41,6 +49,8 @@ public class Level3MeowDialogue : MonoBehaviour
             ShowSpeechBubble();
             audioData.Play(0);
             ToggleNearbyLights();
+            // check win condition
+            UpdateWin();
         }
     }
 
@@ -52,8 +62,21 @@ public class Level3MeowDialogue : MonoBehaviour
         Destroy(activeBubble, displayDuration);
     }
 
+    // to win, need EyeLightsTop to be on and EyeLightsLeft to be on, and BoxPosition2 to be active
+    // since toggleNearbyLights is called in update, can check here also for box position
     void ToggleNearbyLights()
     {
+        // update BoxPosition
+        if (boxPos1.activeSelf)
+        {
+            boxIsPos2 = false;
+        }
+        if (boxPos2.activeSelf)
+        {
+            boxIsPos2 = true;
+        }
+
+
         var hits = Physics2D.OverlapCircleAll(transform.position, activationRadius, lightGroupLayer);
         foreach (var hit in hits)
         {
@@ -64,6 +87,10 @@ public class Level3MeowDialogue : MonoBehaviour
             if (group.name == "EyeLightsTop")
             {
                 ToggleEyeLight(eyes.gameObject);
+
+                // set the top lights to be true/false using the game objects state
+                lightsTopOn = eyes.gameObject.activeSelf;
+
                 if (boxPos1.activeSelf)
                 {
                     boxPos1Light.SetActive(true);
@@ -77,6 +104,10 @@ public class Level3MeowDialogue : MonoBehaviour
             else if (group.name == "EyeLightsLeft")
             {
                 ToggleEyeLight(eyes.gameObject);
+
+                // set the left lights to be true/false using the game objects state
+                lightsLeftOn = eyes.gameObject.activeSelf;
+
                 if (boxPos2.activeSelf)
                 {
                     boxPos2Light.SetActive(true);
@@ -173,5 +204,19 @@ public class Level3MeowDialogue : MonoBehaviour
     {
         Gizmos.color = Color.cyan;
         Gizmos.DrawWireSphere(transform.position, activationRadius);
+    }
+
+    void UpdateWin()
+    {
+        if (lightsTopOn && lightsLeftOn && boxIsPos2)
+        {
+            logic.setWin(true);
+        } else
+        {
+            Debug.Log("LightsTop: " + lightsTopOn);
+            Debug.Log("LightsLeft: " + lightsLeftOn);
+            Debug.Log("Box is pos2: " + boxIsPos2);
+        }
+
     }
 }
