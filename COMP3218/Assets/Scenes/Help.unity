@@ -756,13 +756,13 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'The darkness is dangerous, don''t get too close!
 
-    Try meowing at the
-    statues to see if they''ll light up for you
+    The statues can
+    light a path for you
 
-    Manipulate the lights to make
-    a path out of the room...
+    Manipulate the lights to make a path out of the room...
 
-    and collect stars for extra points!'
+    and
+    collect stars for extra points!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3aa937542f5fd814a9a5e59da9136fc4, type: 2}
   m_sharedMaterial: {fileID: -1273987016772630887, guid: 3aa937542f5fd814a9a5e59da9136fc4, type: 2}
