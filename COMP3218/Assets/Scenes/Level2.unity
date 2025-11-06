@@ -6524,7 +6524,7 @@ GameObject:
   - component: {fileID: 537863855}
   - component: {fileID: 537863856}
   m_Layer: 0
-  m_Name: Ray1
+  m_Name: TopRay
   m_TagString: SafeZone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9235,7 +9235,7 @@ GameObject:
   - component: {fileID: 1112316259}
   - component: {fileID: 1112316260}
   m_Layer: 0
-  m_Name: Ray3
+  m_Name: RightRay
   m_TagString: SafeZone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9303,8 +9303,8 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - - {x: -8.698114, y: -0.022580147}
-      - {x: -2.9817364, y: -12.1550865}
-      - {x: -2.8140755, y: -12.510935}
+      - {x: -3.8804255, y: -12.628078}
+      - {x: -3.3343692, y: -12.510935}
       - {x: -1.9453716, y: -12.889948}
       - {x: 0.5484495, y: -12.846895}
       - {x: 4.17578, y: -13.007122}
@@ -12244,7 +12244,7 @@ GameObject:
   - component: {fileID: 1590278538}
   - component: {fileID: 1590278539}
   m_Layer: 0
-  m_Name: Ray2
+  m_Name: DownRay
   m_TagString: SafeZone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12311,7 +12311,9 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -8.101084, y: 0.108523846}
+    - - {x: -5.920762, y: -1.5504081}
+      - {x: -8.101084, y: 0.108523846}
+      - {x: -9.806604, y: -1.4576983}
       - {x: -10.152014, y: -11.691042}
       - {x: -8.69787, y: -12.372717}
       - {x: -6.6218753, y: -11.990793}
