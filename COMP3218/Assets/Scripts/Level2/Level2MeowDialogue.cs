@@ -16,8 +16,11 @@ public class Level2MeowDialogue : MonoBehaviour
     private AudioSource audioData;
     private GameLogic logic;
 
+    // Top
     public GameObject safeZone1;
+    //Down
     public GameObject safeZone2;
+    //Right
     public GameObject safeZone3;
 
     public GameObject pressurePlate;
@@ -112,8 +115,8 @@ public class Level2MeowDialogue : MonoBehaviour
             if (!diagEyes.activeSelf)
             {
                 Debug.Log("Statue looking right: activating right beam.");
-                safeZone2.SetActive(true);
-                safeZone3.SetActive(false);
+                safeZone2.SetActive(false);
+                safeZone3.SetActive(true);
                 downEyes.SetActive(false);
                 diagEyes.SetActive(true);
                 StartCoroutine(FadeInLights(diagEyes));
@@ -127,8 +130,8 @@ public class Level2MeowDialogue : MonoBehaviour
             if (!downEyes.activeSelf)
             {
                 Debug.Log("Statue looking down: activating down beam.");
-                safeZone3.SetActive(true);
-                safeZone2.SetActive(false);
+                safeZone3.SetActive(false);
+                safeZone2.SetActive(true);
                 diagEyes.SetActive(false);
                 downEyes.SetActive(true);
                 StartCoroutine(FadeInLights(downEyes));
