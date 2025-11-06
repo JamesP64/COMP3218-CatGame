@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class ContinueButton : MonoBehaviour
 {
     public GameObject pauseMenu;
+    public GameObject cat;
     public Button button;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -20,6 +21,8 @@ public class ContinueButton : MonoBehaviour
     void Continue()
     {
         pauseMenu.SetActive(false);
+        cat.GetComponent<TopDownMovement>().enabled = true;
+        cat.GetComponent<MeowDialogue>().enabled = true;
     }
 
 }
