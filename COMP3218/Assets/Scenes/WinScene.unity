@@ -382,7 +382,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2128181832434176420, guid: 15b8c523bdef7f2418bb56f37b36e3b3, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 20
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 2128181832434176420, guid: 15b8c523bdef7f2418bb56f37b36e3b3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -434,7 +434,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80bbe5ced21110341bd4f4614c6bd6a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ChangeSceneButton
-  SceneName: Level2
+  SceneName: Introduction2
   button: {fileID: 733958194}
 --- !u!114 &733958194 stripped
 MonoBehaviour:
@@ -1022,7 +1022,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2027907620731802008, guid: 2089fafedd24b3047817d14299bfe6db, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 20
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 2027907620731802008, guid: 2089fafedd24b3047817d14299bfe6db, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
