@@ -251,7 +251,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -435,7 +435,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ChangeSceneButton
   SceneName: Level3
-  button: {fileID: 0}
+  button: {fileID: 733958194}
+--- !u!114 &733958194 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 117552732225141177, guid: 15b8c523bdef7f2418bb56f37b36e3b3, type: 3}
+  m_PrefabInstance: {fileID: 733958190}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 733958192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
 --- !u!1 &1372265545
 GameObject:
   m_ObjectHideFlags: 0
