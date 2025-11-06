@@ -24,6 +24,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Introduction.unity
     guid: 69fb82707cf29b1448271557903aa20c
   - enabled: 1
+    path: Assets/Scenes/EscapeMenu.unity
+    guid: d420901d16f957a4da5a079fa31b125b
+  - enabled: 1
     path: Assets/Scenes/Level1.unity
     guid: 4e6e23464ee64f64cb4dc49ec8198966
   - enabled: 1
