@@ -4,14 +4,14 @@ using UnityEngine.SceneManagement;
 public class PDetect : MonoBehaviour
 {
 
-    public GameObject statue1;
-    public GameObject statue2;
+    public GameObject statueLookingDown;
+    public GameObject statueLookingRight;
 
-    public static bool LookingRight = true;
+    public static bool LookingRight = false;
 
     public Level2MeowDialogue dialogue;
 
-    public static bool leftStatueOn;
+    public static bool leftStatueOn = false;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -30,17 +30,17 @@ public class PDetect : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            if (statue1.activeSelf)
+            if (statueLookingDown.activeSelf)
             {
-                statue1.SetActive(false);
-                statue2.SetActive(true);
-                LookingRight = false;
+                statueLookingDown.SetActive(false);
+                statueLookingRight.SetActive(true);
+                LookingRight = true;
             }
             else
             {
-                statue2.SetActive(false);
-                statue1.SetActive(true);
-                LookingRight = true;
+                statueLookingRight.SetActive(false);
+                statueLookingDown.SetActive(true);
+                LookingRight = false;
             }
 
             if (leftStatueOn)

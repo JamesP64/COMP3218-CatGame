@@ -22,8 +22,8 @@ public class Level2MeowDialogue : MonoBehaviour
 
     public GameObject pressurePlate;
 
-    public GameObject eyeLightsLeftPosition1;
-    public GameObject eyeLightsLeftPosition2;
+    public GameObject eyeLightsLeftDown;
+    public GameObject eyeLightsLeftDiagonal;
     public GameObject eyeLightsTop;
 
     public GameObject PinkMaker;
@@ -95,26 +95,28 @@ public class Level2MeowDialogue : MonoBehaviour
         }
     }
 
+    // Gets called when you meow at left statue, or when you press the pressure plate, while the left statue is on
     public void HandleStatueControlledLights()
     {
        
-        bool lookingRight = PDetect.LookingRight;
 
-        var rightEyes = eyeLightsLeftPosition1.transform.Find("Eyes").gameObject;
-        var downEyes = eyeLightsLeftPosition2.transform.Find("Eyes").gameObject;
+        bool lookingRight = PDetect.LookingRight;
+        Debug.Log("lookingRight" + lookingRight);
+
+        var diagEyes = eyeLightsLeftDiagonal.transform.Find("Eyes").gameObject;
+        var downEyes = eyeLightsLeftDown.transform.Find("Eyes").gameObject;
 
         
         if (lookingRight)
         {
-            if (!rightEyes.activeSelf)
+            if (!diagEyes.activeSelf)
             {
                 Debug.Log("Statue looking right: activating right beam.");
                 safeZone2.SetActive(true);
                 safeZone3.SetActive(false);
                 downEyes.SetActive(false);
-                rightEyes.SetActive(true);
-                StartCoroutine(FadeInLights(rightEyes));
-                eyeLightsLeftOn = false;
+                diagEyes.SetActive(true);
+                StartCoroutine(FadeInLights(diagEyes));
                 UpdateWin();
                 Debug.Log("Win condition: " + logic.getWin());
 
@@ -127,10 +129,9 @@ public class Level2MeowDialogue : MonoBehaviour
                 Debug.Log("Statue looking down: activating down beam.");
                 safeZone3.SetActive(true);
                 safeZone2.SetActive(false);
-                rightEyes.SetActive(false);
+                diagEyes.SetActive(false);
                 downEyes.SetActive(true);
                 StartCoroutine(FadeInLights(downEyes));
-                eyeLightsLeftOn = true;
                 UpdateWin();
                 Debug.Log("Win condition: " + logic.getWin());
 
@@ -190,8 +191,8 @@ public class Level2MeowDialogue : MonoBehaviour
     // to win, eyelightstop need to be on, eyeligtsleft pos1
     void UpdateWin()
     {
-        Debug.Log("Updating win condition, top lights: " + eyeLightsTopOn + ", left lights: " + eyeLightsLeftOn);
-        if(eyeLightsTop.activeSelf && eyeLightsLeftPosition1.activeSelf)
+        Debug.Log("Updating win condition, top lights: " + eyeLightsTop.transform.Find("Eyes").gameObject.activeSelf + ", left lights: " + eyeLightsLeftDiagonal.transform.Find("Eyes").gameObject.activeSelf);
+        if(eyeLightsTop.transform.Find("Eyes").gameObject.activeSelf && eyeLightsLeftDiagonal.transform.Find("Eyes").gameObject.activeSelf)
         {
             logic.setWin(true);
         }

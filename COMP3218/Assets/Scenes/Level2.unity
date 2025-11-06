@@ -14071,8 +14071,8 @@ MonoBehaviour:
   safeZone2: {fileID: 1590278537}
   safeZone3: {fileID: 1112316258}
   pressurePlate: {fileID: 1890676211}
-  eyeLightsLeftPosition1: {fileID: 1134319669}
-  eyeLightsLeftPosition2: {fileID: 650674651}
+  eyeLightsLeftDown: {fileID: 1134319669}
+  eyeLightsLeftDiagonal: {fileID: 650674651}
   eyeLightsTop: {fileID: 1232364546}
   PinkMaker: {fileID: 1627258409}
 --- !u!1001 &1875069780
@@ -14397,8 +14397,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be3edd44557235d44a3999da82cc8672, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PDetect
-  statue1: {fileID: 823072535}
-  statue2: {fileID: 1508384801}
+  statueLookingDown: {fileID: 823072535}
+  statueLookingRight: {fileID: 1508384801}
   dialogue: {fileID: 1866838077}
 --- !u!1001 &1892925962
 PrefabInstance:
