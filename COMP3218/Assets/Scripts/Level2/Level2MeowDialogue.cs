@@ -28,10 +28,10 @@ public class Level2MeowDialogue : MonoBehaviour
 
     public GameObject PinkMaker;
 
-    private Boolean eyeLightsLeftOn;
+    private Boolean eyeLightsLeftOn; 
     private Boolean eyeLightsTopOn;
 
-    
+    // to win, eyelightstop need to be on, eyeligtsleft pos1
 
     void Start()
     {
@@ -187,12 +187,17 @@ public class Level2MeowDialogue : MonoBehaviour
         }
     }
 
+    // to win, eyelightstop need to be on, eyeligtsleft pos1
     void UpdateWin()
     {
         Debug.Log("Updating win condition, top lights: " + eyeLightsTopOn + ", left lights: " + eyeLightsLeftOn);
-        if(eyeLightsTopOn && eyeLightsLeftOn)
+        if(eyeLightsTop.activeSelf && eyeLightsLeftPosition1.activeSelf)
         {
             logic.setWin(true);
+        }
+        else
+        {
+            logic.setWin(false);
         }
     }
 }
