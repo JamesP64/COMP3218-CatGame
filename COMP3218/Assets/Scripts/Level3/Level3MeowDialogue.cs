@@ -11,17 +11,17 @@ public class Level3MeowDialogue : MonoBehaviour
     public float activationRadius = 5f;
     public LayerMask lightGroupLayer;
     public GameObject gameLogic;
-    public GameObject eyeLightsLeft;
-    public GameObject eyeLightsTop;
+    public GameObject eyeLightsLeft; // actual rays of light, if active then they are on 
+    public GameObject eyeLightsTop; // ''
 
     private GameObject activeBubble;
     private AudioSource audioData;
     private GameLogic logic;
 
-    public GameObject boxPos1Light;
-    public GameObject boxPos2Light;
+    public GameObject boxPos1Light; // light emitted by mirror at top towin:false
+    public GameObject boxPos2Light; // at bottom towin:true
 
-    public GameObject boxPos1SafeZoneNotOccluded;
+    public GameObject boxPos1SafeZoneNotOccluded; 
     public GameObject boxPos2SafeZoneNotOccluded;
     public GameObject boxPos1SafeZoneOccluded;
     public GameObject boxPos2SafeZoneOccluded;
@@ -167,8 +167,6 @@ public class Level3MeowDialogue : MonoBehaviour
             data.light.intensity = data.light.lightType == Light2D.LightType.Parametric ? 3f : 1f;
             data.light.shapeLightFalloffSize = data.targetFalloff;
         }
-
-        logic.setWin(true);
     }
 
     IEnumerator FadeOutLights(GameObject eyes)
@@ -208,14 +206,13 @@ public class Level3MeowDialogue : MonoBehaviour
 
     void UpdateWin()
     {
-        if (lightsTopOn && lightsLeftOn && boxIsPos2)
+        if (eyeLightsLeft.activeSelf && eyeLightsTop.activeSelf && boxPos2Light.activeSelf)
         {
+            Debug.Log("left: " + eyeLightsLeft.activeSelf + " top: " + eyeLightsTop.activeSelf + " boxPos2: " + boxPos2.activeSelf);
             logic.setWin(true);
         } else
         {
-            Debug.Log("LightsTop: " + lightsTopOn);
-            Debug.Log("LightsLeft: " + lightsLeftOn);
-            Debug.Log("Box is pos2: " + boxIsPos2);
+            logic.setWin(false);
         }
 
     }
