@@ -13,11 +13,15 @@ public class PDetect : MonoBehaviour
 
     public static bool leftStatueOn = false;
 
+    public Sprite downSprite;
+    public Sprite upSprite;
+    public SpriteRenderer spriteRenderer;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -30,6 +34,7 @@ public class PDetect : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            spriteRenderer.sprite = downSprite;
             if (statueLookingDown.activeSelf)
             {
                 statueLookingDown.SetActive(false);
@@ -49,6 +54,10 @@ public class PDetect : MonoBehaviour
             }
             
         }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        spriteRenderer.sprite = upSprite;
     }
 
     public static void statueOn()

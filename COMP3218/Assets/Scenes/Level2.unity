@@ -14313,7 +14313,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: -6230924613437089265, guid: 7a035f27d61fe7d438aff02e0dda3571, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -14400,6 +14400,9 @@ MonoBehaviour:
   statueLookingDown: {fileID: 823072535}
   statueLookingRight: {fileID: 1508384801}
   dialogue: {fileID: 1866838077}
+  downSprite: {fileID: -7122111376188006839, guid: 7a035f27d61fe7d438aff02e0dda3571, type: 3}
+  upSprite: {fileID: -6230924613437089265, guid: 7a035f27d61fe7d438aff02e0dda3571, type: 3}
+  spriteRenderer: {fileID: 1890676212}
 --- !u!1001 &1892925962
 PrefabInstance:
   m_ObjectHideFlags: 0
