@@ -1,9 +1,13 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Rendering.Universal;
 
 public class Statue : MonoBehaviour
 {
+    public GameObject progressBarObject; 
+    private Image fillImage;
+
     public GameObject lookingDownSprite;
     public GameObject lookingDiagSprite;
 
@@ -21,14 +25,31 @@ public class Statue : MonoBehaviour
     private float freezeDuration = 0f;
     private bool isFrozen = false;
 
-    private SpriteRenderer spriteRenderer;
+    private SpriteRenderer spriteRendererTop;
+    private SpriteRenderer spriteRendererBottom;
+
+    public string defaultState;
 
     private void Start()
     {
         activated = false;
-        lookingDown = true;
-        lookingDiag = false;  
-        spriteRenderer = lookingDownSprite.GetComponent<SpriteRenderer>();
+        if (defaultState.Equals("Down"))
+        {
+            lookingDown = true;
+            lookingDiag = false;
+            spriteRendererTop = lookingDownSprite.transform.Find("Top").GetComponent<SpriteRenderer>();
+            spriteRendererBottom = lookingDownSprite.transform.Find("Bottom").GetComponent<SpriteRenderer>();
+        }
+        else
+        {
+            lookingDown = false;
+            lookingDiag = true;
+            spriteRendererTop = lookingDiagSprite.transform.Find("Top").GetComponent<SpriteRenderer>();
+            spriteRendererBottom = lookingDiagSprite.transform.Find("Bottom").GetComponent<SpriteRenderer>();
+        }
+
+        fillImage = progressBarObject.transform.Find("Fill").GetComponent<Image>();
+        progressBarObject.SetActive(false);
     }
 
     private void Update()
@@ -37,9 +58,16 @@ public class Statue : MonoBehaviour
         {
             freezeTimer += Time.deltaTime;
             float t = Mathf.Clamp01(freezeTimer / freezeDuration);
-            spriteRenderer.color = Color.Lerp(Color.blue, Color.white, t);
+            spriteRendererTop.color = Color.Lerp(new Color(28, 168, 248, 0.44f), Color.white, t); 
+            spriteRendererBottom.color = Color.Lerp(new Color(28, 168, 248, 0.44f), Color.white, t);
 
-            if (t >= 1f) isFrozen = false; 
+            fillImage.fillAmount = 1f - t;
+
+            if (t >= 1f)
+            {
+                isFrozen = false;
+                progressBarObject.SetActive(false);
+            }    
         }
     }
     public void rotate()
@@ -85,7 +113,14 @@ public class Statue : MonoBehaviour
         freezeDuration = duration;
         freezeTimer = 0f;
         isFrozen = true;
-        spriteRenderer.color = Color.blue;
+        spriteRendererTop.color = new Color(28, 168, 248, 0.44f);
+        spriteRendererBottom.color = new Color(28, 168, 248, 0.44f);
+
+        if (progressBarObject != null)
+        {
+            progressBarObject.SetActive(true);
+            fillImage.fillAmount = 1f;
+        }
     }
 
     IEnumerator FadeInLights(GameObject eyes)
@@ -132,10 +167,13 @@ public class Statue : MonoBehaviour
     {
         if (lookingDown)
         {
-            spriteRenderer = lookingDownSprite.GetComponent<SpriteRenderer>();
-        }else
+            spriteRendererTop = lookingDownSprite.transform.Find("Top").GetComponent<SpriteRenderer>();
+            spriteRendererBottom = lookingDownSprite.transform.Find("Bottom").GetComponent<SpriteRenderer>();
+        }
+        else
         {
-            spriteRenderer = lookingDiagSprite.GetComponent<SpriteRenderer>();
+            spriteRendererTop = lookingDiagSprite.transform.Find("Top").GetComponent<SpriteRenderer>();
+            spriteRendererBottom = lookingDiagSprite.transform.Find("Bottom").GetComponent<SpriteRenderer>();
         }
     }
 

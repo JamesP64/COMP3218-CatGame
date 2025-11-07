@@ -24,7 +24,7 @@ public class GameController : MonoBehaviour
         topFrozen = false;
         rightFrozen = false;
         leftFrozen= false;
-        freezeDuration = 20f;
+        freezeDuration = 10f;
     }
 
 
@@ -48,26 +48,26 @@ public class GameController : MonoBehaviour
         if (statue == TopStatue)
         {
             topFrozen = true;
-            StartCoroutine(Thaw(topFrozen));
+            StartCoroutine(Thaw(() => topFrozen = false));
             statue.freeze(freezeDuration);
         }
         if (statue == RightStatue)
         {
             rightFrozen = true;
-            StartCoroutine(Thaw(rightFrozen));
+            StartCoroutine(Thaw(() => rightFrozen = false));
             statue.freeze(freezeDuration);
         }
         if (statue == LeftStatue)
         {
             leftFrozen = true;
-            StartCoroutine(Thaw(leftFrozen));
+            StartCoroutine(Thaw(() => leftFrozen = false));
             statue.freeze(freezeDuration);
         }
 
     }
-    IEnumerator Thaw(bool statueFreeze)
+    IEnumerator Thaw(System.Action unfreezeAction)
     {
         yield return new WaitForSeconds(freezeDuration);
-        statueFreeze = false;
+        unfreezeAction?.Invoke();
     }
 }

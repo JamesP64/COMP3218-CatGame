@@ -16,11 +16,13 @@ public class FreezeBox : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             spriteRenderer.sprite = downSprite;
+            transform.position += new Vector3(0, -0.1f, 0);
             gameController.freeze(linkedStatue);
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
         spriteRenderer.sprite = upSprite;
+        transform.position += new Vector3(0, 0.1f, 0);
     }
 }
