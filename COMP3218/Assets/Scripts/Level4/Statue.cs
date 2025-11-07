@@ -58,8 +58,6 @@ public class Statue : MonoBehaviour
         {
             freezeTimer += Time.deltaTime;
             float t = Mathf.Clamp01(freezeTimer / freezeDuration);
-            spriteRendererTop.color = Color.Lerp(new Color(28, 168, 248, 0.44f), Color.white, t); 
-            spriteRendererBottom.color = Color.Lerp(new Color(28, 168, 248, 0.44f), Color.white, t);
 
             fillImage.fillAmount = 1f - t;
 
@@ -113,8 +111,6 @@ public class Statue : MonoBehaviour
         freezeDuration = duration;
         freezeTimer = 0f;
         isFrozen = true;
-        spriteRendererTop.color = new Color(28, 168, 248, 0.44f);
-        spriteRendererBottom.color = new Color(28, 168, 248, 0.44f);
 
         if (progressBarObject != null)
         {
