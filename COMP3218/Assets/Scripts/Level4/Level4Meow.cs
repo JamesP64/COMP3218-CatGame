@@ -8,7 +8,7 @@ public class Level4Meow : MonoBehaviour
     private GameLogic logic;
     public GameObject speechBubble;
     public float displayDuration = 2f;
-    public float activationRadius = 5f;
+    public float activationRadius = 2f;
     public LayerMask statueLayer;
     public GameObject gameLogic;
 

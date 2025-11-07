@@ -13,19 +13,39 @@ public class Statue : MonoBehaviour
     public GameObject lookingDownLight;
     public GameObject lookingDiagLight;
 
-    private static bool activated;
-    private static bool lookingDown;
-    private static bool lookingDiag;    
+    private bool activated;
+    private bool lookingDown;
+    private bool lookingDiag;
+
+    private float freezeTimer = 0f;
+    private float freezeDuration = 0f;
+    private bool isFrozen = false;
+
+    private SpriteRenderer spriteRenderer;
 
     private void Start()
     {
         activated = false;
         lookingDown = true;
-        lookingDiag = false;   
+        lookingDiag = false;  
+        spriteRenderer = lookingDownSprite.GetComponent<SpriteRenderer>();
+    }
+
+    private void Update()
+    {
+        if (isFrozen)
+        {
+            freezeTimer += Time.deltaTime;
+            float t = Mathf.Clamp01(freezeTimer / freezeDuration);
+            spriteRenderer.color = Color.Lerp(Color.blue, Color.white, t);
+
+            if (t >= 1f) isFrozen = false; 
+        }
     }
     public void rotate()
     {
-        Debug.Log(this.name + "Rotate Called"); 
+        Debug.Log(this.name + "Rotate Called");
+        Debug.Log(this.name + " Activated: " + activated);
         lookingDownSprite.SetActive(!lookingDownSprite.activeSelf);
         lookingDiagSprite.SetActive(!lookingDiagSprite.activeSelf);
         if (activated)
@@ -38,11 +58,14 @@ public class Statue : MonoBehaviour
        
         lookingDown = !lookingDown;
         lookingDiag = !lookingDiag;
+
+        swapRenderer();
     }
 
     public void activate()
     {
-        activated = true;
+        Debug.Log(this.name + "Activate Called");
+        setActivated(true);
         if (lookingDown)
         {
             lookingDownSafeZone.SetActive(true);
@@ -55,6 +78,14 @@ public class Statue : MonoBehaviour
             lookingDiagLight.SetActive(true);
             StartCoroutine(FadeInLights(lookingDiagLight));
         }
+    }
+
+    public void freeze (float duration)
+    {
+        freezeDuration = duration;
+        freezeTimer = 0f;
+        isFrozen = true;
+        spriteRenderer.color = Color.blue;
     }
 
     IEnumerator FadeInLights(GameObject eyes)
@@ -95,5 +126,22 @@ public class Statue : MonoBehaviour
             data.light.intensity = data.light.lightType == Light2D.LightType.Parametric ? 3f : 1f;
             data.light.shapeLightFalloffSize = data.targetFalloff;
         }
+    }
+
+    private void swapRenderer()
+    {
+        if (lookingDown)
+        {
+            spriteRenderer = lookingDownSprite.GetComponent<SpriteRenderer>();
+        }else
+        {
+            spriteRenderer = lookingDiagSprite.GetComponent<SpriteRenderer>();
+        }
+    }
+
+    private void setActivated(bool active)
+    {
+        Debug.Log("Set Activated Called" + active);
+        activated = active;
     }
 }
