@@ -18460,7 +18460,7 @@ MonoBehaviour:
   leftLookingDiag: {fileID: 1636525841}
   rightLookingDiag: {fileID: 1871015863}
   topLookingDown: {fileID: 785288919}
-  winScene: WinSceneLevel3
+  winScene: WinSceneLevel4
 --- !u!4 &1749351776
 Transform:
   m_ObjectHideFlags: 0
