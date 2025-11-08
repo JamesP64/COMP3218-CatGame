@@ -4,11 +4,15 @@ public class StarDetect : MonoBehaviour
 {
     public GameObject starLight;
     public GameObject starCollection;
+    public GameObject gameLogic;
+    private GameLogic logic;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        logic = gameLogic.GetComponent<GameLogic>();
+
     }
 
     // Update is called once per frame
@@ -24,6 +28,7 @@ public class StarDetect : MonoBehaviour
             starCollection.SetActive(true);
             starLight.SetActive(false);
             gameObject.SetActive(false);
+            logic.increaseStarCount();
         }
     }
 }

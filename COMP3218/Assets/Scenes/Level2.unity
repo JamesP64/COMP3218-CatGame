@@ -455,6 +455,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   starLight: {fileID: 799348352}
   starCollection: {fileID: 129636517}
+  gameLogic: {fileID: 1356180498}
 --- !u!61 &85872846
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12316,6 +12317,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   starLight: {fileID: 305347272}
   starCollection: {fileID: 1247507527}
+  gameLogic: {fileID: 1356180498}
 --- !u!61 &1560257377
 BoxCollider2D:
   m_ObjectHideFlags: 0

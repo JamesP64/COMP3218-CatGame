@@ -6204,6 +6204,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   starLight: {fileID: 717805374}
   starCollection: {fileID: 1878044583}
+  gameLogic: {fileID: 1170666217}
 --- !u!61 &562980180
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16186,6 +16187,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   starLight: {fileID: 1495894722}
   starCollection: {fileID: 1758189570}
+  gameLogic: {fileID: 1170666217}
 --- !u!61 &1443480806
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -21018,6 +21020,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   starLight: {fileID: 63643398}
   starCollection: {fileID: 1350141604}
+  gameLogic: {fileID: 1170666217}
 --- !u!61 &2079321966
 BoxCollider2D:
   m_ObjectHideFlags: 0

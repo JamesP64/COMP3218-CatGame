@@ -12,9 +12,11 @@ public class LevelCompleteScript : MonoBehaviour
     public string winScene;
     private GameLogic logic;
 
+
     private void Start()
     {
         logic = gameLogic.GetComponent<GameLogic>();
+        StarsCollected.Instance.stars = 0;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -22,6 +24,8 @@ public class LevelCompleteScript : MonoBehaviour
         if (collision.CompareTag("Player") && logic.getWin()==true)
         {
             Debug.Log("Won");
+            Debug.Log("star count: " + logic.getStarCount());
+            StarsCollected.Instance.stars = logic.getStarCount();
             SceneManager.LoadScene(winScene, LoadSceneMode.Single);
         } else
         {

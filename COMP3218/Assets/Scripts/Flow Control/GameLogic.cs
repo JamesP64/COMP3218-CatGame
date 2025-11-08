@@ -7,10 +7,12 @@ public class GameLogic : MonoBehaviour
     // The actual win logic is attached to the exit
     // The actual lost logic is attached to the cat
     Boolean win;
+    int starCount;
     void Start()
     {
         Debug.Log("Win condition: " + win);
         win = false;
+        starCount = 0;
     }
     public void setWin(Boolean win)
     {
@@ -21,5 +23,14 @@ public class GameLogic : MonoBehaviour
     public Boolean getWin()
     {
         return win;
+    }
+
+    public void increaseStarCount()
+    {
+        starCount++;
+    }
+    public int getStarCount()
+    {
+        return starCount;
     }
 }
