@@ -50,8 +50,8 @@ public class Level3MeowDialogue : MonoBehaviour
             audioData.Play(0);
             ToggleNearbyLights();
             // check win condition
-            UpdateWin();
         }
+        UpdateWin();
     }
 
     void ShowSpeechBubble()
@@ -78,14 +78,17 @@ public class Level3MeowDialogue : MonoBehaviour
 
 
         var hits = Physics2D.OverlapCircleAll(transform.position, activationRadius, lightGroupLayer);
+        Debug.Log("hits: " + hits);
         foreach (var hit in hits)
         {
+            Debug.Log("hit: " + hit);
             var group = hit.transform.parent != null ? hit.transform.parent.gameObject : hit.gameObject;
             var eyes = group.transform.Find("Eyes");
             if (eyes == null) continue;
 
             if (group.name == "EyeLightsTop")
             {
+                Debug.Log("Toggling EyeLightsTop");
                 ToggleEyeLight(eyes.gameObject);
 
                 // set the top lights to be true/false using the game objects state
@@ -103,6 +106,7 @@ public class Level3MeowDialogue : MonoBehaviour
             }
             else if (group.name == "EyeLightsLeft")
             {
+                Debug.Log("Toggling EyeLightsLeft");
                 ToggleEyeLight(eyes.gameObject);
 
                 // set the left lights to be true/false using the game objects state
@@ -124,9 +128,12 @@ public class Level3MeowDialogue : MonoBehaviour
     void ToggleEyeLight(GameObject eyes)
     {
         bool currentlyActive = eyes.activeSelf;
-        eyes.SetActive(!currentlyActive);
-        if (!currentlyActive) StartCoroutine(FadeInLights(eyes));
-        else StartCoroutine(FadeOutLights(eyes));
+
+        if (!currentlyActive)
+        {
+            eyes.SetActive(true);
+            StartCoroutine(FadeInLights(eyes));
+        }
     }
 
     IEnumerator FadeInLights(GameObject eyes)
@@ -171,6 +178,7 @@ public class Level3MeowDialogue : MonoBehaviour
 
     IEnumerator FadeOutLights(GameObject eyes)
     {
+        Debug.Log("fadeoutlights");
         var lights = eyes.GetComponentsInChildren<Light2D>(true);
         float duration = 0.8f;
         float t = 0f;
@@ -212,6 +220,7 @@ public class Level3MeowDialogue : MonoBehaviour
             logic.setWin(true);
         } else
         {
+            Debug.Log("left: " + eyeLightsLeft.activeSelf + " top: " + eyeLightsTop.activeSelf + " boxPos2: " + boxPos2.activeSelf);
             logic.setWin(false);
         }
 

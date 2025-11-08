@@ -23,7 +23,6 @@ public class DeathScript : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(safeZoneCount);
         if (safeZoneCount <= 0)
         {
             Debug.Log("Die");
