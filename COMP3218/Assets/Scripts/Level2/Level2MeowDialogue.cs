@@ -34,6 +34,11 @@ public class Level2MeowDialogue : MonoBehaviour
     private Boolean eyeLightsLeftOn; 
     private Boolean eyeLightsTopOn;
 
+    [Header("Audio Settings")]
+    [SerializeField] private AudioClip meowSound;
+    [SerializeField] private AudioClip lightUpSound;
+    [SerializeField,Range(0f, 1f)] private float lightUpVolume = 1f;
+
     // to win, eyelightstop need to be on, eyeligtsleft pos1
 
     void Start()
@@ -153,6 +158,11 @@ public class Level2MeowDialogue : MonoBehaviour
 
     IEnumerator FadeInLights(GameObject eyes)
     {
+        if(lightUpSound != null && audioData != null)
+        {
+            audioData.PlayOneShot(lightUpSound, lightUpVolume);
+        }
+
         var lights = eyes.GetComponentsInChildren<Light2D>(true);
         foreach (var l in lights) l.enabled = true;
 
