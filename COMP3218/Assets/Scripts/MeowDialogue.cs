@@ -17,6 +17,11 @@ public class MeowDialogue : MonoBehaviour
 
     public GameObject safeZone;
 
+    [Header("Audio Settings")]
+    [SerializeField] private AudioClip meowSound;
+    [SerializeField] private AudioClip lightUpSound;
+    [SerializeField] private float lightSoundVolume = 1f;
+
     void Start()
     {
         audioData = GetComponent<AudioSource>();
@@ -69,6 +74,10 @@ public class MeowDialogue : MonoBehaviour
 
     IEnumerator FadeInLights(GameObject eyes)
     {
+        if (lightUpSound != null && audioData != null)
+        {
+            audioData.PlayOneShot(lightUpSound, lightSoundVolume);
+        }
         var lights = eyes.GetComponentsInChildren<Light2D>(true);
         foreach (var l in lights) l.enabled = true;
 

@@ -14,6 +14,11 @@ public class Level4Meow : MonoBehaviour
 
     public GameController gameController;
 
+    [Header("Audio Settings")]
+    [SerializeField] private AudioClip meowSound;
+    [SerializeField] private AudioClip lightUpSound;
+    [SerializeField] private float lightUpVolume = 1f;
+
     void Start()
     {
         audioData = GetComponent<AudioSource>();
@@ -47,6 +52,11 @@ public class Level4Meow : MonoBehaviour
             if (statue != null)
             {
                 statue.activate();
+
+                if (lightUpSound != null && audioData != null)
+                {
+                    audioData.PlayOneShot(lightUpSound, lightUpVolume);
+                }
             }
 
         }

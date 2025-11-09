@@ -4242,7 +4242,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -14208,6 +14208,9 @@ MonoBehaviour:
   eyeLightsLeftDiagonal: {fileID: 650674651}
   eyeLightsTop: {fileID: 1232364546}
   PinkMaker: {fileID: 1627258409}
+  meowSound: {fileID: 0}
+  lightUpSound: {fileID: 8300000, guid: 094c3c6c93b1049099a8b1a7e972b40a, type: 3}
+  lightUpVolume: 1
 --- !u!1001 &1875069780
 PrefabInstance:
   m_ObjectHideFlags: 0

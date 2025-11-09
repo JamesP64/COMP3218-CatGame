@@ -31,7 +31,10 @@ public class Level3PDetect : MonoBehaviour
 
     public GameObject boxShowLight;
 
-
+    [Header("Audio Settings")]
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip boxPressSound;
+    [SerializeField] private float boxPressVolume = 0.5f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -50,6 +53,12 @@ public class Level3PDetect : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             spriteRenderer.sprite = downSprite;
+
+            if(audioSource != null && boxPressSound != null)
+            {
+                audioSource.PlayOneShot(boxPressSound, boxPressVolume);
+            }
+
             if (boxPos1.activeSelf)
             {
                 // Swap Box Sprites
