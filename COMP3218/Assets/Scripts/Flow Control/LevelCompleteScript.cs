@@ -31,14 +31,17 @@ public class LevelCompleteScript : MonoBehaviour
             if (SceneManager.GetActiveScene().name.Equals("Level1"))
             {
                 StarsCollected.Instance.level2 = true;
+                StarsCollected.Instance.max(1, logic.getStarCount());
             }
             if (SceneManager.GetActiveScene().name.Equals("Level2"))
             {
                 StarsCollected.Instance.level3 = true;
+                StarsCollected.Instance.max(2, logic.getStarCount());
             }
             if (SceneManager.GetActiveScene().name.Equals("Level3"))
             {
                 StarsCollected.Instance.level4 = true;
+                StarsCollected.Instance.max(3, logic.getStarCount());
             }
 
             SceneManager.LoadScene(winScene, LoadSceneMode.Single);

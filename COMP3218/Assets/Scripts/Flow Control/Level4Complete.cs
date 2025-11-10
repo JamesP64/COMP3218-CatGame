@@ -25,6 +25,7 @@ public class Level4Complete : MonoBehaviour
                 Debug.Log("Won");
                 Debug.Log("star count: " + logic.getStarCount());
                 StarsCollected.Instance.stars = logic.getStarCount();
+                StarsCollected.Instance.max(4, logic.getStarCount());
                 SceneManager.LoadScene(winScene, LoadSceneMode.Single);
             }
         }
