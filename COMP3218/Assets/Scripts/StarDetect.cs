@@ -29,6 +29,7 @@ public class StarDetect : MonoBehaviour
             starLight.SetActive(false);
             gameObject.SetActive(false);
             logic.increaseStarCount();
+            Debug.Log("star count: " + logic.getStarCount());
         }
     }
 }
