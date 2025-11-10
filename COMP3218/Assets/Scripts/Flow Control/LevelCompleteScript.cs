@@ -26,6 +26,21 @@ public class LevelCompleteScript : MonoBehaviour
             Debug.Log("Won");
             Debug.Log("star count: " + logic.getStarCount());
             StarsCollected.Instance.stars = logic.getStarCount();
+
+            Debug.Log(SceneManager.GetActiveScene().name);
+            if (SceneManager.GetActiveScene().name.Equals("Level1"))
+            {
+                StarsCollected.Instance.level2 = true;
+            }
+            if (SceneManager.GetActiveScene().name.Equals("Level2"))
+            {
+                StarsCollected.Instance.level3 = true;
+            }
+            if (SceneManager.GetActiveScene().name.Equals("Level3"))
+            {
+                StarsCollected.Instance.level4 = true;
+            }
+
             SceneManager.LoadScene(winScene, LoadSceneMode.Single);
         } else
         {

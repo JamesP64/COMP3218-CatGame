@@ -4,6 +4,10 @@ public class StarsCollected : MonoBehaviour
 {
     public static StarsCollected Instance;
     public int stars = 0;
+    public int totalStars = 0;
+    public bool level2;
+    public bool level3;
+    public bool level4;
 
     private void Awake()
     {
@@ -29,5 +33,15 @@ public class StarsCollected : MonoBehaviour
     void Update()
     {
         
+    }
+
+    int getTotalStars()
+    {
+        return totalStars;
+    }
+
+    void increaseTotalStars() 
+    {
+        totalStars += 1;
     }
 }
