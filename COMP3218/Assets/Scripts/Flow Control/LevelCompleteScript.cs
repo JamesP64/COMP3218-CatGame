@@ -26,7 +26,6 @@ public class LevelCompleteScript : MonoBehaviour
             Debug.Log("Won");
             Debug.Log("star count: " + logic.getStarCount());
             StarsCollected.Instance.stars = logic.getStarCount();
-            StarsCollected.Instance.increaseTotalStars(logic.getStarCount());
 
             Debug.Log(SceneManager.GetActiveScene().name);
             if (SceneManager.GetActiveScene().name.Equals("Level1"))
@@ -44,7 +43,7 @@ public class LevelCompleteScript : MonoBehaviour
                 StarsCollected.Instance.level4 = true;
                 StarsCollected.Instance.max(3, logic.getStarCount());
             }
-
+            StarsCollected.Instance.updateTotalStars();
             SceneManager.LoadScene(winScene, LoadSceneMode.Single);
         } else
         {

@@ -39,6 +39,7 @@ public class StarsCollected : MonoBehaviour
     {
         if (Keyboard.current.jKey.wasPressedThisFrame)
         {
+            updateTotalStars();
             Debug.Log("Total Stars: " + getTotalStars());
         }
     }
@@ -47,10 +48,9 @@ public class StarsCollected : MonoBehaviour
     {
         return totalStars;
     }
-
-    public void increaseTotalStars(int count) 
+    public void updateTotalStars()
     {
-        totalStars += count;
+        totalStars = maxLevel1 + maxLevel2 + maxLevel3 + maxLevel4;
     }
 
     public void max(int level, int number)
