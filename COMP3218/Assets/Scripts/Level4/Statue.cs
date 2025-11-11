@@ -32,7 +32,14 @@ public class Statue : MonoBehaviour
 
     private void Start()
     {
-        activated = false;
+        if (defaultState.Equals("Left"))
+        {
+            activated = true;
+        }else
+        {
+            activated = false;
+        }
+ 
         if (defaultState.Equals("Down"))
         {
             lookingDown = true;
