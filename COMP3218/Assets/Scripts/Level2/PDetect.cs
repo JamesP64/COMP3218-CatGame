@@ -23,6 +23,7 @@ public class PDetect : MonoBehaviour
     {
         leftStatueOn = false;
         spriteRenderer = GetComponent<SpriteRenderer>();
+        LookingRight = false;
     }
 
     // Update is called once per frame
