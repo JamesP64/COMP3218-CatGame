@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class StarsCollected : MonoBehaviour
 {
@@ -36,7 +37,10 @@ public class StarsCollected : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Keyboard.current.jKey.wasPressedThisFrame)
+        {
+            Debug.Log("Total Stars: " + getTotalStars());
+        }
     }
 
     int getTotalStars()
@@ -44,9 +48,9 @@ public class StarsCollected : MonoBehaviour
         return totalStars;
     }
 
-    void increaseTotalStars() 
+    public void increaseTotalStars(int count) 
     {
-        totalStars += 1;
+        totalStars += count;
     }
 
     public void max(int level, int number)
