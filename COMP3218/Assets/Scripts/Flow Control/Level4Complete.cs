@@ -10,9 +10,22 @@ public class Level4Complete : MonoBehaviour
     public string winScene;
     public GameObject gameLogic;
     private GameLogic logic;
+
+    [Header("Audio Settings")]
+    [SerializeField] private AudioClip deniedSound;
+    [SerializeField] private float audioVolume =1.0f;
+    [SerializeField] private AudioSource audioSource;
+
     private void Start()
     {
         logic = gameLogic.GetComponent<GameLogic>();
+
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
+
         StarsCollected.Instance.stars = 0;
     }
 
@@ -40,6 +53,14 @@ public class Level4Complete : MonoBehaviour
                     StarsCollected.Instance.max(5, logic.getStarCount());
                     StarsCollected.Instance.level5 = true;
                     SceneManager.LoadScene(winScene, LoadSceneMode.Single);
+                }
+            }
+            else
+            {
+                Debug.Log("Denied");
+                if (deniedSound != null)
+                {
+                    audioSource.PlayOneShot(deniedSound, audioVolume);
                 }
             }
         }
