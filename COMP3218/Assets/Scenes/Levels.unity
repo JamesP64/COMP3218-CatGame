@@ -624,7 +624,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80bbe5ced21110341bd4f4614c6bd6a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ChangeSceneButton
-  SceneName: Level1
+  SceneName: Introduction
   button: {fileID: 258617352}
 --- !u!114 &258617356
 MonoBehaviour:
@@ -2401,7 +2401,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80bbe5ced21110341bd4f4614c6bd6a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ChangeSceneButton
-  SceneName: Level2
+  SceneName: Introduction2
   button: {fileID: 2123425367}
 --- !u!114 &2123425367
 MonoBehaviour:
