@@ -46,8 +46,9 @@ public class StarsCollected : MonoBehaviour
         }
     }
 
-    int getTotalStars()
+    public int getTotalStars()
     {
+        updateTotalStars();
         return totalStars;
     }
     public void updateTotalStars()

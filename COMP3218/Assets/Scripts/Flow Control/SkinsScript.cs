@@ -9,6 +9,7 @@ public class SkinsScript : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        Debug.Log("Total stars: " + StarsCollected.Instance.getTotalStars());
         if(StarsCollected.Instance.totalStars == 11)
         {
             skin1.SetActive(true);

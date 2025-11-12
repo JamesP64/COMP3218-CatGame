@@ -22,21 +22,23 @@ public class Level4Complete : MonoBehaviour
         {
             if (leftLookingDiag.activeSelf && !rightLookingDiag.activeSelf && topLookingDown.activeSelf)
             {
+                Debug.Log(SceneManager.GetActiveScene().name);
                 if (SceneManager.GetActiveScene().name.Equals("Level4"))
                 {
                     Debug.Log("Won");
                     Debug.Log("star count: " + logic.getStarCount());
                     StarsCollected.Instance.stars = logic.getStarCount();
                     StarsCollected.Instance.max(4, logic.getStarCount());
+                    StarsCollected.Instance.level4 = true;
                     SceneManager.LoadScene(winScene, LoadSceneMode.Single);
                 }
                 if (SceneManager.GetActiveScene().name.Equals("Level5"))
                 {
-
                     Debug.Log("Won");
                     Debug.Log("star count: " + logic.getStarCount());
                     StarsCollected.Instance.stars = logic.getStarCount();
                     StarsCollected.Instance.max(5, logic.getStarCount());
+                    StarsCollected.Instance.level5 = true;
                     SceneManager.LoadScene(winScene, LoadSceneMode.Single);
                 }
             }
