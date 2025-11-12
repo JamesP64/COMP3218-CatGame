@@ -2136,12 +2136,15 @@ MonoBehaviour:
   button2: {fileID: 2123425367}
   button3: {fileID: 1350975572}
   button4: {fileID: 237417388}
+  button5: {fileID: 1865108339}
   button2Label: {fileID: 1445177611}
   button3Label: {fileID: 2109530029}
   button4Label: {fileID: 365748764}
+  button5Label: {fileID: 727419284}
   level2Stars: {fileID: 1478426292}
   level3Stars: {fileID: 138834924}
   level4Stars: {fileID: 1329874815}
+  level5Stars: {fileID: 1195009059}
   unlockedTextColor: {r: 0.6392157, g: 0.6509804, b: 0.93725497, a: 1}
 --- !u!1 &1574021473
 GameObject:
