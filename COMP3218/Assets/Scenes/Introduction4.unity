@@ -893,8 +893,8 @@ MonoBehaviour:
   m_text: 'You''re making really good progress!
 
 
-    Make sure you''re thinking
-    about what combination of lights you need to unlock the exit...'
+    If you get stuck on the next
+    floor, think about getting the right mix of colours to help you escape.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3aa937542f5fd814a9a5e59da9136fc4, type: 2}
   m_sharedMaterial: {fileID: -1273987016772630887, guid: 3aa937542f5fd814a9a5e59da9136fc4, type: 2}
