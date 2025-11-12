@@ -12,6 +12,8 @@ public class DeathScript : MonoBehaviour
         if (other.CompareTag("SafeZone"))
             safeZoneCount++;
             //Debug.Log("Safe zone count: " + safeZoneCount);
+
+        if (other.CompareTag("EvilGhost")) SceneManager.LoadScene(loseScene, LoadSceneMode.Single);
     }
 
     void OnTriggerExit2D(Collider2D other)
