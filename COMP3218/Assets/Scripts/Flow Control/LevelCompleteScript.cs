@@ -12,19 +12,10 @@ public class LevelCompleteScript : MonoBehaviour
     public string winScene;
     private GameLogic logic;
 
-    [Header("Audio Settings")]
-    [SerializeField] private AudioClip deniedSound;
-    [SerializeField] private float audioVolume = 1.0f;
-    [SerializeField] private AudioSource audioSource;
 
     private void Start()
     {
         logic = gameLogic.GetComponent<GameLogic>();
-        audioSource = GetComponent<AudioSource>();
-        if (audioSource == null)
-        {
-            audioSource = gameObject.AddComponent<AudioSource>();
-        }
         StarsCollected.Instance.stars = 0;
     }
 
@@ -55,11 +46,7 @@ public class LevelCompleteScript : MonoBehaviour
             StarsCollected.Instance.updateTotalStars();
             SceneManager.LoadScene(winScene, LoadSceneMode.Single);
         } else
-        { 
-            if(deniedSound != null && audioSource != null)
-            {
-                audioSource.PlayOneShot(deniedSound, audioVolume);
-            }
+        {
             Debug.Log(collision.tag);
             Debug.Log(logic.getWin());
         }

@@ -9,10 +9,12 @@ public class StarsCollected : MonoBehaviour
     public bool level2;
     public bool level3;
     public bool level4;
+    public bool level5;
     public int maxLevel1;
     public int maxLevel2;
     public int maxLevel3;
     public int maxLevel4;
+    public int maxLevel5;
 
     private void Awake()
     {
@@ -44,13 +46,14 @@ public class StarsCollected : MonoBehaviour
         }
     }
 
-    int getTotalStars()
+    public int getTotalStars()
     {
+        updateTotalStars();
         return totalStars;
     }
     public void updateTotalStars()
     {
-        totalStars = maxLevel1 + maxLevel2 + maxLevel3 + maxLevel4;
+        totalStars = maxLevel1 + maxLevel2 + maxLevel3 + maxLevel4 + maxLevel5;
     }
 
     public void max(int level, int number)
@@ -70,6 +73,10 @@ public class StarsCollected : MonoBehaviour
         if(level == 4 && number > maxLevel4)
         {
             maxLevel4 = number;
+        }
+        if(level == 5 && number > maxLevel5)
+        {
+            maxLevel5 = number;
         }
     }
 }
