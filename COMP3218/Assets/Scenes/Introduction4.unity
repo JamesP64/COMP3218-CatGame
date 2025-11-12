@@ -436,7 +436,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80bbe5ced21110341bd4f4614c6bd6a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ChangeSceneButton
-  SceneName: Level2
+  SceneName: Level4
   button: {fileID: 252264972}
 --- !u!114 &252264976
 MonoBehaviour:
@@ -890,8 +890,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Woah! it looks like whoever is in charge here doesn't want you to escape,
-    they've sent some shadow guards to stop you leaving
+  m_text: 'You''re making really good progress!
+
+
+    Make sure you''re thinking
+    about what combination of lights you need to unlock the exit...'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3aa937542f5fd814a9a5e59da9136fc4, type: 2}
   m_sharedMaterial: {fileID: -1273987016772630887, guid: 3aa937542f5fd814a9a5e59da9136fc4, type: 2}
