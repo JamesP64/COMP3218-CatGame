@@ -8,15 +8,12 @@ public class LevelsScript : MonoBehaviour
     public Button button2;
     public Button button3;
     public Button button4;
-    public Button button5;
     public GameObject button2Label;
     public GameObject button3Label;
     public GameObject button4Label;
-    public GameObject button5Label;
     public Text level2Stars;
     public Text level3Stars;
     public Text level4Stars;
-    public Text level5Stars;
     public Color unlockedTextColor;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -42,13 +39,6 @@ public class LevelsScript : MonoBehaviour
             button4Label.GetComponent<Text>().color = unlockedTextColor;
             level4Stars.color = unlockedTextColor;
             level4Stars.text = "stars: " + StarsCollected.Instance.maxLevel4.ToString();
-        }
-        if (StarsCollected.Instance.level5)
-        {
-            button5.interactable = true;
-            button5Label.GetComponent<Text>().color = unlockedTextColor;
-            level5Stars.color = unlockedTextColor;
-            level5Stars.text = "stars: " + StarsCollected.Instance.maxLevel5.ToString();
         }
 
     }

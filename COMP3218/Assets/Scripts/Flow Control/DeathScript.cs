@@ -9,12 +9,9 @@ public class DeathScript : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log(other);
         if (other.CompareTag("SafeZone"))
             safeZoneCount++;
             //Debug.Log("Safe zone count: " + safeZoneCount);
-
-        if (other.CompareTag("EvilGhost")) SceneManager.LoadScene(loseScene, LoadSceneMode.Single);
     }
 
     void OnTriggerExit2D(Collider2D other)
