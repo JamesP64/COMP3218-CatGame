@@ -38,7 +38,7 @@ public class GhostMove : MonoBehaviour
         }
 
         moveInput = moveInput.normalized;
-        Debug.Log(rb.position);
+       
     }
 
 

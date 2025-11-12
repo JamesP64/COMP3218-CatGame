@@ -9,6 +9,7 @@ public class DeathScript : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        Debug.Log(other);
         if (other.CompareTag("SafeZone"))
             safeZoneCount++;
             //Debug.Log("Safe zone count: " + safeZoneCount);
