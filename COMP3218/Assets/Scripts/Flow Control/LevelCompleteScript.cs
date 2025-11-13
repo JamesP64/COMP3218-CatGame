@@ -10,7 +10,10 @@ public class LevelCompleteScript : MonoBehaviour
     public GameObject cat;
     public GameObject gameLogic;
     public string winScene;
+    public AudioSource audioData;
     private GameLogic logic;
+
+
 
 
     private void Start()
@@ -49,7 +52,12 @@ public class LevelCompleteScript : MonoBehaviour
         {
             Debug.Log(collision.tag);
             Debug.Log(logic.getWin());
+            audioData.Play(0);
+            
+
         }
         Debug.Log(collision);
     }
+
+
 }

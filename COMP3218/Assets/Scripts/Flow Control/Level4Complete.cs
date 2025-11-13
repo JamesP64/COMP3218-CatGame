@@ -10,6 +10,8 @@ public class Level4Complete : MonoBehaviour
     public string winScene;
     public GameObject gameLogic;
     private GameLogic logic;
+    public AudioSource audioData;
+
     private void Start()
     {
         logic = gameLogic.GetComponent<GameLogic>();
@@ -41,6 +43,10 @@ public class Level4Complete : MonoBehaviour
                     StarsCollected.Instance.level5 = true;
                     SceneManager.LoadScene(winScene, LoadSceneMode.Single);
                 }
+            }else
+            {
+                Debug.Log("win condition not fulfilled");
+                audioData.Play(0);
             }
         }
     }
