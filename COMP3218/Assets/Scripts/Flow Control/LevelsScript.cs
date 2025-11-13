@@ -47,8 +47,8 @@ public class LevelsScript : MonoBehaviour
         {
             button5.interactable = true;
             button5Label.GetComponent<Text>().color = unlockedTextColor;
-            level4Stars.color = unlockedTextColor;
-            level4Stars.text = "stars: " + StarsCollected.Instance.maxLevel4.ToString();
+            level5Stars.color = unlockedTextColor;
+            level5Stars.text = "stars: " + StarsCollected.Instance.maxLevel5.ToString();
         }
 
     }

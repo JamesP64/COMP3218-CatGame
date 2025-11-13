@@ -1,14 +1,14 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class OpenPauseMenu3 : MonoBehaviour
+public class OpenPauseMenu4 : MonoBehaviour
 {
     public GameObject pauseMenu;
     public GameObject cat;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -18,7 +18,7 @@ public class OpenPauseMenu3 : MonoBehaviour
         {
             pauseMenu.SetActive(true);
             cat.GetComponent<TopDownMovement>().enabled = false;
-            cat.GetComponent<Level3MeowDialogue>().enabled = false;
+            cat.GetComponent<Level4Meow>().enabled = false;
         }
     }
 }

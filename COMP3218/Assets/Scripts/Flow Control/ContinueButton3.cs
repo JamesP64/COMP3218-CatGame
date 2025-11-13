@@ -20,6 +20,7 @@ public class ContinueButton3 : MonoBehaviour
     // makes the canvas not active
     void Continue()
     {
+        Debug.Log("Continue Pressed");
         pauseMenu.SetActive(false);
         cat.GetComponent<TopDownMovement>().enabled = true;
         cat.GetComponent<Level3MeowDialogue>().enabled = true;
