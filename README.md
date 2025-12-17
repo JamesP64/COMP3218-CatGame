@@ -1,3 +1,3 @@
 2D Top-Down Cat Game 
 Spatial Reasoning Dungeon Crawler
-Built to demonstrate tutorialization
+Built to demonstrate tutorialization techniques.
